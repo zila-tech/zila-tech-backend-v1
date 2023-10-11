@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Preview Selected Items</title>
+    <style>
+        /* Define CSS to hide the print button when printed */
+        @media print {
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Zila Tech Firm - Preview Selected Items</h1>
+    {% for note in notes %}
+    <h2>{{ note.welcome }}</h2>
+    <p>{{ note.detail }}</p>
+    {% endfor %}
+    <!-- Print button is hidden when printed -->
+    <button class="print-button" onclick="printItems()">Print</button>
+</body>
+<script>
+    function printItems() {
+        window.print();
+    }
+</script>
+</html>
